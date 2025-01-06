@@ -19,6 +19,6 @@ Vehicle Model:
 The `run.sh` script does the following steps automatically:
 1) Runs `blockMesh` using the `system/blockMeshDict` file to define the overall space and constrains of the virtual wind tunnel
 2) Runs `surfaceFeatureExtract` on the `modelCar.obj` file to create the necessary features
-3) Runs 'snappyHexMesh` on the `modelCar.obj` file to create a dynamically sized mesh around the model
+3) Runs `snappyHexMesh` on the `modelCar.obj` file to create a dynamically sized mesh around the model
 4) Runs `ppppp`
 5) Runs `simpleFoam` for 500s as defined in `system/controlDict` and logs the results at 100s intervals
