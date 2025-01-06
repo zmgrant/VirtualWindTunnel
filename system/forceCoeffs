@@ -17,7 +17,7 @@ forceCoeffs1
 
     log             yes;
 
-    patches         (modelCarGroup);
+    patches         (modelGroup);
     rho             rhoInf;      // Indicates incompressible
     rhoInf          1;           // Required when rho = rhoInf
     liftDir         (0 0 1);
@@ -36,7 +36,7 @@ binField1
     libs                    (fieldFunctionObjects);
     binModel                singleDirectionUniformBin;
     fields                  (forceCoeff);
-    patches                 (modelCarGroup);
+    patches                 (modelGroup);
     decomposePatchValues    true;
     CofR                    ${../forceCoeffs1/CofR};
 

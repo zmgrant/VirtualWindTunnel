@@ -39,7 +39,7 @@ boundaryField
         value           $internalField;
     }
 
-    modelCarGroup
+    modelGroup
     {
         type            omegaWallFunction;
         value           $internalField;

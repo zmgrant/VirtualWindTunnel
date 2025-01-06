@@ -14,7 +14,7 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-modelCar.obj
+model.stl
 {
     // How to obtain raw features (extractFromFile || extractFromSurface)
     extractionMethod    extractFromSurface;

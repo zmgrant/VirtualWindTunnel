@@ -14,14 +14,14 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-polyMeshPatches   (modelCarGroup);
+polyMeshPatches   (modelGroup);
 
 boundary
 {
     bottom
     {
         type                patch;
-        // ownerPolyPatch      modelCarGroup;
+        // ownerPolyPatch      modelGroup;
         neighbourPolyPatch  lowerWall;
     }
 }

@@ -52,7 +52,7 @@ boundaryField
         value           uniform 0;
     }
 
-    modelCarGroup
+    modelGroup
     {
         type            nutkWallFunction;
         value           uniform 0;
