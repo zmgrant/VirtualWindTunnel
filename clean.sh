@@ -9,3 +9,4 @@ rm -rf 300/ 2> /dev/null
 rm -rf 400/ 2> /dev/null
 rm -rf 500/ 2> /dev/null
 rm -rf postProcessing/ 2> /dev/null
+rm -rf logs/
