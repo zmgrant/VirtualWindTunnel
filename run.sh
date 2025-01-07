@@ -2,15 +2,24 @@
 
 echo "Copying initial conditions"
 cp -r 0.orig 0
-mkdir logs
 echo "Generating initial mesh with blockMesh..."
-blockMesh > logs/blockMesh.log
+foamJob -a -w -log-app blockMesh
 echo "Extracting features of the model with surfaceFeatureExtract..."
-surfaceFeatureExtract > logs/surfaceFeatureExtract.log
+foamJob -a -w -log-app surfaceFeatureExtract
+echo "Decomposing for parallel mesh generation..."
+foamJob -a -w -log-app decomposePar
 echo "Creating model defined mesh with snappyHexMesh..."
-snappyHexMesh -overwrite > logs/snappyHexMesh.log
+foamJob -w -a -p -log-app snappyHexMesh -overwrite
+echo "Reconstruction mesh from parallel results..."
+foamJob -w -a -log-app reconstructParMesh -constant
+echo "Verifying reconstructed mesh..."
+foamJob -w -a -log-app checkMesh
+echo "Decomposing for parallel simulation..."
+foamJob -a -w -log-app decomposePar -force
 echo "Running potentialFoam..."
-potentialFoam > logs/potentialFoam.log
+foamJob -w -a -p -log-app potentialFoam
 echo "Running simpleFoam..."
-simpleFoam > logs/simpleFoam.log
+foamJob -w -a -p -log-app simpleFoam
+echo "Reconstructing parallel sim..."
+foamJob -w -a -log-app reconstructPar
 echo "Done!"
