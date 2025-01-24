@@ -4,6 +4,10 @@ Easy configuration for running a virtual wind tunnel on a vehicle model using Op
 # Requirements
 Software:
 - OpenFOAM version: ESI V2406 (https://www.openfoam.com/news/main-news/openfoam-v2406)
+ - Install instructions for Ubuntu (works in WSL as well) can be found here: https://develop.openfoam.com/Development/openfoam/-/wikis/precompiled/debian
+- ParaView
+ - Download: https://www.paraview.org/download/
+ - Can be run in Windows if using WSL (usual configuration)
 
 Vehicle Model:
 - Properly sized and oriented *.stl file of vehicle to test
